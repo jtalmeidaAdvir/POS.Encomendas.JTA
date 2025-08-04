@@ -1,0 +1,13 @@
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Encomendas.JTA.csproj.AssemblyReference.cache
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Encomendas.JTA.csproj.CoreCompileInputs.cache
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Encomendas.JTA.POS.EditorEscolherEncomendas.resources
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Encomendas.JTA.csproj.GenerateResource.cache
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\bin\Debug\POS.Encomendas.JTA.dll
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\bin\Debug\POS.Encomendas.JTA.pdb
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\bin\Debug\BasBE100.dll
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\bin\Debug\ErpDS100.dll
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\bin\Debug\IVndBS100.dll
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\bin\Debug\VndBE100.dll
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Enco.938449A5.Up2Date
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Encomendas.JTA.dll
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Encomendas.JTA.pdb
