@@ -49,13 +49,19 @@ namespace POS.Encomendas.JTA.POS
                 int rowIndex = dataGridView1.Rows.Add(false, tipoDoc, numDoc, serie, entidade, id);
                 var row = dataGridView1.Rows[rowIndex];
 
-                // Se for uma encomenda já usada, pinta de cinzento e desativa o checkbox
+                // Se for uma encomenda já usada, pinta com um estilo mais elegante e desativa o checkbox
                 if (_encomendasUsadas.Contains(id))
                 {
-                    row.DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+                    // Mantém a cor alternada mas com tom mais acinzentado
+                    System.Drawing.Color baseColor = (rowIndex % 2 == 0) ?
+                        System.Drawing.Color.FromArgb(240, 240, 240) :
+                        System.Drawing.Color.FromArgb(235, 235, 235);
+
+                    row.DefaultCellStyle.BackColor = baseColor;
+                    row.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(150, 150, 150);
                     row.Cells[0].ReadOnly = true;
                     row.Cells[0].Value = false; // Desmarca se estava marcado
-                    row.Cells[0].Style.ForeColor = System.Drawing.Color.DarkGray;
+                    row.Cells[0].Style.ForeColor = System.Drawing.Color.FromArgb(180, 180, 180);
                 }
 
                 dadosCabecDocs.Seguinte();
