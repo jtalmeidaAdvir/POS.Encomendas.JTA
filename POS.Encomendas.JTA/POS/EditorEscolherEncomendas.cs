@@ -97,6 +97,7 @@ namespace POS.Encomendas.JTA.POS
             }
         }
 
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             EncomendasSelecionadas.Clear();

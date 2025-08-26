@@ -163,6 +163,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "EditorEscolherEncomendas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editor Encomendas";
             this.Load += new System.EventHandler(this.EditorEscolherEncomendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

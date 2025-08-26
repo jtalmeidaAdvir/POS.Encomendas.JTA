@@ -117,12 +117,29 @@ namespace POS.Encomendas.JTA.POS
 
                     if (linhasCriadasParaEncomendas.TryGetValue(linha.IdLinha, out string idLinhaEncomenda))
                     {
+
+                      //  MessageBox.Show(linha.Quantidade.ToString().Replace(",", "."));
                         string updateQuantTrans = $@"
                     UPDATE LinhasDocStatus
-                    SET QuantTrans = ISNULL(QuantTrans, 0) + {linha.Quantidade.ToString().Replace(",", ".")}
+                    SET QuantTrans = {linha.Quantidade} /2
                     WHERE IdLinhasDoc = '{idLinhaEncomenda}'";
-
+                        //ISNULL(QuantTrans, 0) + 
                         BSO.DSO.ExecuteSQL(updateQuantTrans);
+
+
+
+                        //INSERIR OU MARTELAR LinhasDocTrans
+                        //BUSCAR OS IDs DAS LINHAS DA FATURA
+                       // this.DocumentoVenda.Linhas.NumItens
+
+                        string insertLinhasDocTrans = $@"
+                        INSERT INTO LinhasDocTrans (IdLinhasDoc,IdLinhasDocOrigem,QuantTrans)
+                        VALUES
+                        ('{linha.IdLinha}','{idLinhaEncomenda}',{linha.Quantidade.ToString().Replace(",", ".")})";
+
+                        BSO.DSO.ExecuteSQL(insertLinhasDocTrans);
+
+
                     }
                 }
 
@@ -148,6 +165,14 @@ namespace POS.Encomendas.JTA.POS
                         BSO.DSO.ExecuteSQL(fecharEncomenda);
                     }
                 }
+
+
+
+     
+
+
+
+
 
                 EncomendasUsadas.Clear();
                 linhasCriadasParaEncomendas.Clear();
