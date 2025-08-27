@@ -43,7 +43,17 @@ namespace POS.Encomendas.JTA.POS
             if (form.ShowDialog() == DialogResult.OK)
             {
                 List<string> idsSelecionados = form.EncomendasSelecionadas;
-
+                int i = 0;
+                foreach (string idEncomenda in form.EncomendasSelecionadas)
+                {
+                    if (i == 0)
+                    {
+                        double descontoEntidade = form.GetDescontoEntidade(idEncomenda);
+                        this.DocumentoVenda.DescEntidade = descontoEntidade;
+                        i++;
+                    }
+        
+                }
                 try
                 {
                     foreach (string id in idsSelecionados)
@@ -82,7 +92,6 @@ namespace POS.Encomendas.JTA.POS
                             novaLinha.CodIva = iva;
                             novaLinha.TaxaIva = taxaIva;
                             novaLinha.Desconto1 = desconto;
-
                             // Mapeia o ID da nova linha para a linha original da encomenda
                             linhasCriadasParaEncomendas[novaLinha.IdLinha] = idLinhaOriginal;
 
@@ -91,6 +100,8 @@ namespace POS.Encomendas.JTA.POS
 
                         EncomendasUsadas.Add(id);
                     }
+
+             
                 }
                 catch (Exception ex)
                 {
