@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|c:\\users\\jtalm\\source\\repos\\pos.encomendas.jta\\pos.encomendas.jta\\pos\\editorescolherencomendas.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|solutionrelative:pos.encomendas.jta\\pos\\editorescolherencomendas.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\pos.encomendas.jta\\pos\\editorescolherencomendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|solutionrelative:pos.encomendas.jta\\pos\\editorescolherencomendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\pos.encomendas.jta\\pos\\editorescolherencomendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|c:\\users\\jtalm\\source\\repos\\pos.encomendas.jta\\pos.encomendas.jta\\pos\\editorescolherencomendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|solutionrelative:pos.encomendas.jta\\pos\\editorescolherencomendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|c:\\users\\jtalm\\source\\repos\\pos.encomendas.jta\\pos.encomendas.jta\\pos\\uieditorvendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\pos.encomendas.jta\\pos\\uieditorvendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|solutionrelative:pos.encomendas.jta\\pos\\uieditorvendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\pos.encomendas.jta\\pos\\editorescolherencomendas.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECA1D99-D07A-461D-9F99-7777B55406AB}|POS.Encomendas.JTA\\POS.Encomendas.JTA.csproj|solutionrelative:pos.encomendas.jta\\pos\\editorescolherencomendas.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,54 +26,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UiEditorVendas.cs",
+              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\UiEditorVendas.cs",
+              "RelativeDocumentMoniker": "POS.Encomendas.JTA\\POS\\UiEditorVendas.cs",
+              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\UiEditorVendas.cs",
+              "RelativeToolTip": "POS.Encomendas.JTA\\POS\\UiEditorVendas.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAowEoAAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T08:51:02.153Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EditorEscolherEncomendas.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.Designer.cs",
-              "RelativeDocumentMoniker": "POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.Designer.cs",
-              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.Designer.cs",
-              "RelativeToolTip": "POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.Designer.cs",
-              "ViewState": "AgIAANIAAAAAAAAAAAAAANsAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T14:29:33.196Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UiEditorVendas.cs",
-              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\UiEditorVendas.cs",
-              "RelativeDocumentMoniker": "POS.Encomendas.JTA\\POS\\UiEditorVendas.cs",
-              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\UiEditorVendas.cs",
-              "RelativeToolTip": "POS.Encomendas.JTA\\POS\\UiEditorVendas.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAwwGYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T08:51:02.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EditorEscolherEncomendas.cs",
-              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
-              "RelativeDocumentMoniker": "POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
-              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
-              "RelativeToolTip": "POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T08:55:34.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "EditorEscolherEncomendas.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
               "RelativeDocumentMoniker": "POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
@@ -82,6 +56,31 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-04T08:54:12.357Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EditorEscolherEncomendas.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.Designer.cs",
+              "RelativeDocumentMoniker": "POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.Designer.cs",
+              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.Designer.cs",
+              "RelativeToolTip": "POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.Designer.cs",
+              "ViewState": "AgIAANIAAAAAAAAAAAAAANsAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-26T14:29:33.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditorEscolherEncomendas.cs",
+              "DocumentMoniker": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
+              "RelativeDocumentMoniker": "POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
+              "ToolTip": "C:\\Users\\jtalm\\source\\repos\\POS.Encomendas.JTA\\POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
+              "RelativeToolTip": "POS.Encomendas.JTA\\POS\\EditorEscolherEncomendas.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAowEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T08:55:34.467Z",
+              "EditorCaption": ""
             }
           ]
         }

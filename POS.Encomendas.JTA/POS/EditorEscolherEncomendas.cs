@@ -72,10 +72,14 @@ namespace POS.Encomendas.JTA.POS
         private StdBELista GetCabecDocs(string cliente)
         {
             var queryCabecDoc = $@"
-                SELECT * FROM CabecDoc AS CD 
-                INNER JOIN CabecDocStatus AS CDS ON CD.Id = CDS.IdCabecDoc
-                WHERE CD.TipoDoc = 'ECL' AND CD.Entidade = '{_Cliente}' AND CDS.Fechado <> 1
-                ORDER BY CD.Data DESC";
+
+
+
+
+SELECT TOP 100 * FROM CabecDoc AS CD 
+INNER JOIN CabecDocStatus AS CDS ON CD.Id = CDS.IdCabecDoc
+WHERE CD.TipoDoc = 'ECL' OR CD.TipoDoc = 'ECO' OR CD.TipoDoc = 'ORC' AND CD.Entidade = '{_Cliente}' AND CD.Serie = '2025' AND CDS.Fechado <> 1
+ORDER BY CD.Data DESC";
 
             return _BSO.Consulta(queryCabecDoc);
         }

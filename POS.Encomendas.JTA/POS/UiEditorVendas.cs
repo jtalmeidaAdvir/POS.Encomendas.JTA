@@ -4,6 +4,7 @@ using StdBE100;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 
 
 namespace POS.Encomendas.JTA.POS
@@ -57,7 +58,10 @@ namespace POS.Encomendas.JTA.POS
                             double quantidadeOriginal = linhasdoCabecDoc.DaValor<double>("Quantidade");
                             double quantTrans = linhasdoCabecDoc.DaValor<double>("QuantTrans"); // Quantidade já transformada
                             string idLinhaOriginal = linhasdoCabecDoc.DaValor<string>("Id");
-
+                            double precUnit = linhasdoCabecDoc.DaValor<double>("PrecUnit");
+                            string iva = linhasdoCabecDoc.DaValor<string>("CodIva");
+                            float taxaIva = linhasdoCabecDoc.DaValor<float>("TaxaIva");
+                            double desconto = linhasdoCabecDoc.DaValor<double>("Desconto1");
                             double quantidadeDisponivel = quantidadeOriginal - quantTrans;
 
                             // Se já não existe quantidade disponível, passa à próxima linha
@@ -67,12 +71,17 @@ namespace POS.Encomendas.JTA.POS
                                 continue;
                             }
 
+
                             var documentoV = BSO.Vendas.Documentos.AdicionaLinha(this.DocumentoVenda, artigo);
 
                             var novaLinha = documentoV.Linhas.GetEdita(documentoV.Linhas.NumItens);
                             novaLinha.Quantidade = quantidadeDisponivel;
                             novaLinha.EstadoOrigem = "DISP";
                             novaLinha.Lote = lote;
+                            novaLinha.PrecUnit = precUnit;
+                            novaLinha.CodIva = iva;
+                            novaLinha.TaxaIva = taxaIva;
+                            novaLinha.Desconto1 = desconto;
 
                             // Mapeia o ID da nova linha para a linha original da encomenda
                             linhasCriadasParaEncomendas[novaLinha.IdLinha] = idLinhaOriginal;
