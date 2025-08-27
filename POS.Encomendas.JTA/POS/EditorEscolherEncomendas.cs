@@ -16,6 +16,7 @@ namespace POS.Encomendas.JTA.POS
         private HashSet<string> _encomendasUsadas;
         private List<DataGridViewRow> _dadosOriginais = new List<DataGridViewRow>();
         private Dictionary<string, decimal> _descontosEntidade = new Dictionary<string, decimal>();
+        private Dictionary<string, object> _dadosCliente = new Dictionary<string, object>();
 
         public List<string> EncomendasSelecionadas { get; private set; } = new List<string>();
 
@@ -57,6 +58,17 @@ namespace POS.Encomendas.JTA.POS
                 string serie = dadosCabecDocs.DaValor<string>("Serie");
                 string entidade = dadosCabecDocs.DaValor<string>("Entidade");
                 decimal descEntidade = dadosCabecDocs.DaValor<decimal>("DescEntidade");
+
+                // Armazenar dados do cliente (apenas uma vez, já que todos os documentos são do mesmo cliente)
+                if (_dadosCliente.Count == 0)
+                {
+                    _dadosCliente["Nome"] = dadosCabecDocs.DaValor<string>("Nome");
+                    _dadosCliente["Morada"] = dadosCabecDocs.DaValor<string>("Morada");
+                    _dadosCliente["Morada2"] = dadosCabecDocs.DaValor<string>("Morada2");
+                    _dadosCliente["NumContribuinte"] = dadosCabecDocs.DaValor<string>("NumContribuinte");
+                    _dadosCliente["CodPostal"] = dadosCabecDocs.DaValor<string>("CodPostal");
+                    _dadosCliente["CodPostalLocalidade"] = dadosCabecDocs.DaValor<string>("CodPostalLocalidade");
+                }
 
                 // Armazenar o desconto da entidade para uso posterior
                 if (!_descontosEntidade.ContainsKey(id))
@@ -102,7 +114,7 @@ namespace POS.Encomendas.JTA.POS
             var dataFim = dateTimePicker_fim.Value.ToString("yyyy-MM-dd");
 
             var queryCabecDoc = $@"
-SELECT CD.Id, CD.TipoDoc, CD.NumDoc, CD.Serie, CD.Entidade, CD.Data, CD.DescEntidade
+SELECT CD.Id, CD.TipoDoc, CD.NumDoc, CD.Serie, CD.Entidade, CD.Data, CD.DescEntidade, CD.Nome, CD.Morada, CD.Morada2, CD.NumContribuinte, CD.CodPostal, CD.CodPostalLocalidade
 FROM CabecDoc AS CD 
 INNER JOIN CabecDocStatus AS CDS ON CD.Id = CDS.IdCabecDoc
 WHERE CD.Entidade = '{_Cliente}' 
@@ -235,8 +247,9 @@ ORDER BY CD.Data DESC";
             string tipoDocSelecionado = comboBox_tipoDoc.SelectedItem?.ToString();
             string serieSelecionada = comboBox_serie.SelectedItem?.ToString();
 
-            // Limpar descontos anteriores
+            // Limpar dados anteriores
             _descontosEntidade.Clear();
+            _dadosCliente.Clear();
 
             var dadosCabecDocs = GetCabecDocs(_Cliente);
             CarregarDadosDataGrid(dadosCabecDocs);
@@ -259,12 +272,25 @@ ORDER BY CD.Data DESC";
             return _descontosEntidade.ContainsKey(idDocumento) ? (double)_descontosEntidade[idDocumento] : 0.0;
         }
 
+        public void CarregarDadosDocumentoVenda(dynamic DocumentoVenda)
+        {
+            if (_dadosCliente.Count > 0)
+            {
+                DocumentoVenda.Nome = _dadosCliente["Nome"]?.ToString() ?? "";
+                DocumentoVenda.Morada = _dadosCliente["Morada"]?.ToString() ?? "";
+                DocumentoVenda.Morada2 = _dadosCliente["Morada2"]?.ToString() ?? "";
+                DocumentoVenda.NumContribuinte = _dadosCliente["NumContribuinte"]?.ToString() ?? "";
+                //DocumentoVenda.CodPostal = _dadosCliente["CodPostal"]?.ToString() ?? "";
+                //DocumentoVenda.CodPostalLocalidade = _dadosCliente["CodPostalLocalidade"]?.ToString() ?? "";
+            }
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             EncomendasSelecionadas.Clear();
 
 
-           
+
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {

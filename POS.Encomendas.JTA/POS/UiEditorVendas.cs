@@ -49,8 +49,18 @@ namespace POS.Encomendas.JTA.POS
                     if (i == 0)
                     {
                         double descontoEntidade = form.GetDescontoEntidade(idEncomenda);
+                        form.CarregarDadosDocumentoVenda(this.DocumentoVenda);
                         this.DocumentoVenda.DescEntidade = descontoEntidade;
+
+                    
+
+
                         i++;
+
+                    
+                           
+                      
+                        
                     }
         
                 }
