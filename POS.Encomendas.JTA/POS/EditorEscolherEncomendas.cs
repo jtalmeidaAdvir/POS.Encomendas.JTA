@@ -36,7 +36,7 @@ namespace POS.Encomendas.JTA.POS
         {
             // Configurar datas padrão (6 meses atrás até hoje)
             dateTimePicker_inicio.Value = DateTime.Now.AddMonths(-6);
-            dateTimePicker_fim.Value = DateTime.Now;
+            dateTimePicker_fim.Value = DateTime.Now.AddDays(1);
 
             var dadosCabecDocs = GetCabecDocs(_Cliente);
             CarregarDadosDataGrid(dadosCabecDocs);
@@ -114,15 +114,37 @@ namespace POS.Encomendas.JTA.POS
             var dataFim = dateTimePicker_fim.Value.ToString("yyyy-MM-dd");
 
             var queryCabecDoc = $@"
-SELECT CD.Id, CD.TipoDoc, CD.NumDoc, CD.Serie, CD.Entidade, CD.Data, CD.DescEntidade, CD.Nome, CD.Morada, CD.Morada2, CD.NumContribuinte, CD.CodPostal, CD.CodPostalLocalidade
-FROM CabecDoc AS CD 
-INNER JOIN CabecDocStatus AS CDS ON CD.Id = CDS.IdCabecDoc
+SELECT  
+    CD.Id, 
+    CD.TipoDoc, 
+    CD.NumDoc, 
+    CD.Serie, 
+    CD.Entidade, 
+    CD.Data, 
+    CD.DescEntidade, 
+    CD.Nome, 
+    CD.Morada, 
+    CD.Morada2, 
+    CD.NumContribuinte, 
+    CD.CodPostal, 
+    CD.CodPostalLocalidade
+FROM CabecDoc AS CD
+INNER JOIN CabecDocStatus AS CDS 
+    ON CD.Id = CDS.IdCabecDoc
 WHERE CD.Entidade = '{_Cliente}' 
-    AND CDS.Fechado <> 1
-    AND CD.Data >= '{dataInicio}' 
-    AND CD.Data <= '{dataFim}'
-    AND (CD.TipoDoc = 'ECL' OR CD.TipoDoc = 'ECO' OR CD.TipoDoc = 'ORC')
-ORDER BY CD.Data DESC";
+  AND CDS.Fechado <> 1
+  AND CD.Data >= '{dataInicio}' 
+  AND CD.Data <= '{dataFim}'
+  AND CD.TipoDoc IN ('ECL','ECO','ORC')
+  AND EXISTS (
+        SELECT 1
+        FROM LinhasDoc AS LD
+        INNER JOIN LinhasDocStatus AS LDS 
+            ON LD.Id = LDS.IdLinhasDoc
+        WHERE LD.IdCabecDoc = CD.Id
+          AND (LDS.Quantidade <> LDS.QuantTrans OR LDS.QuantTrans IS NULL)
+  )
+ORDER BY CD.Data DESC;";
 
             return _BSO.Consulta(queryCabecDoc);
         }
