@@ -41,6 +41,12 @@
     <Reference Include="ErpDS100">
       <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\ErpDS100.dll</HintPath>
     </Reference>
+    <Reference Include="IBasBS100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\IBasBS100.dll</HintPath>
+    </Reference>
+    <Reference Include="IInvBS100">
+      <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\IInvBS100.dll</HintPath>
+    </Reference>
     <Reference Include="IVndBS100">
       <HintPath>..\..\..\..\..\..\Program Files\PRIMAVERA\SG100\Apl\IVndBS100.dll</HintPath>
     </Reference>

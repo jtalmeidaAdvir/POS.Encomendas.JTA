@@ -11,3 +11,5 @@ C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\bin\Debug\VndB
 C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Enco.938449A5.Up2Date
 C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Encomendas.JTA.dll
 C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\obj\Debug\POS.Encomendas.JTA.pdb
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\bin\Debug\IBasBS100.dll
+C:\Users\jtalm\source\repos\POS.Encomendas.JTA\POS.Encomendas.JTA\bin\Debug\IInvBS100.dll

@@ -52,15 +52,8 @@ namespace POS.Encomendas.JTA.POS
                         form.CarregarDadosDocumentoVenda(this.DocumentoVenda);
                         this.DocumentoVenda.DescEntidade = descontoEntidade;
 
-                    
-
-
                         i++;
 
-                    
-                           
-                      
-                        
                     }
         
                 }
@@ -93,6 +86,9 @@ namespace POS.Encomendas.JTA.POS
 
 
                             var documentoV = BSO.Vendas.Documentos.AdicionaLinha(this.DocumentoVenda, artigo);
+
+                           
+
 
                             var novaLinha = documentoV.Linhas.GetEdita(documentoV.Linhas.NumItens);
                             novaLinha.Quantidade = quantidadeDisponivel;
@@ -223,6 +219,61 @@ namespace POS.Encomendas.JTA.POS
             ClientePOS = this.DocumentoVenda.Entidade.Trim();
             EncomendasUsadas.Clear();
             linhasCriadasParaEncomendas.Clear();
+        }
+
+        public override void AntesDeGravar(ref bool Cancel, ExtensibilityEventArgs e)
+        {
+            try
+            {
+                // Verificar reservas para cada encomenda selecionada
+                foreach (string idEncomenda in EncomendasUsadas)
+                {
+                    // Buscar dados da encomenda para construir a descrição
+                    string queryEncomenda = $@"
+                        SELECT TipoDoc, Serie, NumDoc 
+                        FROM CabecDoc 
+                        WHERE Id = '{idEncomenda}'";
+
+                    var dadosEncomenda = BSO.Consulta(queryEncomenda);
+                    if (!dadosEncomenda.NoFim())
+                    {
+                        dadosEncomenda.Inicio();
+                        string tipoDoc = dadosEncomenda.DaValor<string>("TipoDoc");
+                        string serie = dadosEncomenda.DaValor<string>("Serie");
+                        string numDoc = dadosEncomenda.DaValor<string>("NumDoc");
+
+                        // Construir a descrição do destino para verificar reservas
+                        string descricaoDestino = $"NE {tipoDoc}.{serie}/{numDoc}";
+
+                        // Verificar se existem reservas para esta encomenda
+                        string queryReservas = $@"
+                            SELECT * FROM INV_Reservas 
+                            WHERE DescricaoDestino = '{descricaoDestino}'";
+
+                        var reservas = BSO.Consulta(queryReservas);
+                        reservas.Inicio();
+
+                        while (!reservas.NoFim())
+                        {
+                            // Pega o ID da reserva
+                            string idReserva = reservas.DaValor<string>("Id");
+
+                            // Anula a reserva
+                            BSO.Inventario.Reservas.AnularReserva(idReserva);
+
+                            // Avança para o próximo registo
+                            reservas.Seguinte();
+                        }
+
+              
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao verificar reservas: " + ex.Message);
+                Cancel = true;
+            }
         }
     }
 }
